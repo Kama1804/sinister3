@@ -22,3 +22,14 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
+
+class AdminSeeder extends Seeder
+{
+    public function run()
+    {
+        Admin::create([
+            'username' => 'admin',
+            'password' => Hash::make('admin123')
+        ]);
+    }
+}
