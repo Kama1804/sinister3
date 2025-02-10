@@ -1,0 +1,163 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Container for the page */
+.container {
+    margin-top: 3rem;
+}
+
+/* Page header */
+.page-header {
+    background-color: #242424;
+    color: #ffffff;
+}
+
+.page-header h1 {
+    color: #ff0000;
+}
+
+.breadcrumb-item a {
+    color: #ffffff;
+}
+
+.breadcrumb-item.active {
+    color: #ff0000;
+}
+
+/* Card styling */
+.card {
+    background-color: #1a1a1a;
+    border: none;
+}
+
+.card-header {
+    background-color: #242424;
+    border-bottom: 1px solid #333333;
+}
+
+.card-header h5 {
+    color: #ffffff;
+}
+
+.card-body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.card-footer {
+    background-color: #242424;
+    border-top: 1px solid #333333;
+    color: #888888;
+}
+
+.card-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Table styling */
+.table {
+    color: #ffffff;
+}
+
+.table thead th {
+    background-color: #242424;
+    color: #ffffff;
+    border-bottom: 2px solid #333333;
+}
+
+.table tbody tr {
+    background-color: #1a1a1a;
+}
+
+.table tbody tr:hover {
+    background-color: #242424;
+}
+
+.table td, .table th {
+    border-color: #333333;
+}
+
+/* Button styling */
+.btn-warning {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #242424;
+    border-color: #333333;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #333333;
+    border-color: #444444;
+}
+
+/* Red accent for titles */
+h2 {
+    color: #ff0000;
+}
+
+/* Responsive styling */
+@media (max-width: 991px) {
+    .container-xxl {
+        padding: 15px;
+    }
+
+    .page-header {
+        padding: 40px 15px;
+    }
+
+    .breadcrumb {
+        text-align: center;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-footer {
+        font-size: 0.875rem;
+    }
+
+    .card-header h5 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-header {
+        padding: 30px 15px;
+    }
+
+    .breadcrumb {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .breadcrumb-item {
+        margin-bottom: 5px;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .card-footer {
+        font-size: 0.85rem;
+    }
+
+    .card-header h5 {
+        font-size: 1rem;
+    }
+}

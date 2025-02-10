@@ -1,0 +1,124 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Style the main container */
+.container {
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+/* Style the card with dark background */
+.card {
+    background-color: #1a1a1a;
+    border: none;
+}
+
+/* Style the card header */
+.card-header {
+    background-color: #242424;
+    border-bottom: 1px solid #333333;
+}
+
+/* Style the table */
+.table {
+    color: #ffffff;
+}
+
+/* Responsive table styles */
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .table-responsive {
+        border: none;
+    }
+    
+    /* Convert table to cards on mobile */
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        margin-bottom: 1rem;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        padding: 0.5rem;
+    }
+    
+    .table td {
+        text-align: right;
+        padding: 0.5rem;
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    .table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 0.5rem;
+        font-weight: bold;
+        text-align: left;
+        color: #ff0000;
+    }
+    
+    /* Adjust modal for mobile */
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+    
+    /* Adjust buttons for mobile */
+    .btn-sm {
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+}
+
+/* Additional dark theme improvements */
+.modal-content {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+}
+
+.modal-header {
+    border-bottom: 1px solid #333333;
+}
+
+.modal-footer {
+    border-top: 1px solid #333333;
+}
+
+.bg-light {
+    background-color: #242424 !important;
+}
+
+.form-control {
+    background-color: #242424;
+    border-color: #333333;
+    color: #ffffff;
+}
+
+.form-control:focus {
+    background-color: #333333;
+    border-color: #ff0000;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+}
+
+/* Ensure proper button sizing on smaller screens */
+@media screen and (max-width: 768px) {
+    .btn {
+        width: 100%;
+    }
+}

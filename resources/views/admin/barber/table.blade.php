@@ -1,0 +1,112 @@
+@include('admin.header')
+<link rel="stylesheet" href="{{ asset('css/table_barber.css') }}">
+
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">Barbers</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="{{route('admin')}}">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Manage Barbers</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<div class="container">
+    <a href="{{ route('admin.barbers.create') }}" class="btn btn-primary mb-3">Add Barber</a>
+    <input type="text" id="barberSearch" class="form-control mb-3" placeholder="Search Barber by Name...">
+
+    @php
+        // Define the mapping for outlet names
+        $outletNames = [
+            'taman_ilmu' => 'Taman Ilmu',
+            'eco_grandeur' => 'Eco Grandeur',
+        ];
+    @endphp
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Outlet</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="barberTable">
+            @foreach ($barbers as $barber)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $barber->name }}</td>
+                <td>{{ $outletNames[$barber->outlet] ?? $barber->outlet }}</td> <!-- Apply mapping -->
+                <td>
+                    <a href="{{ route('admin.barbers.edit', $barber->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ route('admin.barbers.destroy', $barber->id) }}" method="POST"  style="display:inline;" class="delete-barber-form">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-sm btn-danger" >Delete</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+            <script>
+document.querySelectorAll('.delete-barber-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This action cannot be undone!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.submit();
+            }
+        });
+    });
+});
+</script>
+        </tbody>
+    </table>
+</div>
+<!-- Add this right after your <body> tag in each view -->
+@if(session('success'))
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                title: 'Success!',
+                text: "{{ session('success') }}",
+                icon: 'success',
+                confirmButtonColor: '#3085d6'
+            });
+        }
+    </script>
+@endif
+
+@if(session('error'))
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                title: 'Error!',
+                text: "{{ session('error') }}",
+                icon: 'error',
+                confirmButtonColor: '#d33'
+            });
+        }
+    </script>
+@endif
+<script>
+    document.getElementById('barberSearch').addEventListener('keyup', function () {
+        const searchTerm = this.value.toLowerCase();
+        document.querySelectorAll('#barberTable tr').forEach(row => {
+            const name = row.children[1].innerText.toLowerCase();
+            row.style.display = name.includes(searchTerm) ? '' : 'none';
+        });
+    });
+</script>

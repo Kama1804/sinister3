@@ -1,0 +1,55 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+.profile-section, .appointments-section {
+    background-color: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.section-title {
+    color: #ff0000;
+    margin-bottom: 20px;
+}
+.form-control {
+    background-color: #242424;
+    border: 1px solid #333333;
+    color: #ffffff;
+}
+.form-control:focus {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: #ff0000;
+}
+.table {
+    color: #ffffff;
+}
+.table th {
+    background-color: #242424;
+}
+.table td {
+    background-color: #1a1a1a;
+}
+.btn-cancel {
+    background-color: #ff0000;
+    color: white;
+}
+.btn-cancel:hover {
+    background-color: #cc0000;
+}
+
+/* Center the profile form */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the section takes full height of the container */
+}
+.form-container {
+    width: 100%;
+    max-width: 500px; /* Set a max width for the form */
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+}

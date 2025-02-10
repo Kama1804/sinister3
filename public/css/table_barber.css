@@ -1,0 +1,137 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Style the main container */
+.container {
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+/* Style the card with dark background */
+.card {
+    background-color: #1a1a1a;
+    border: none;
+}
+
+/* Style the card header */
+.card-header {
+    background-color: #242424;
+    border-bottom: 1px solid #333333;
+}
+
+/* Style the table */
+.table {
+    color: #ffffff;
+}
+
+/* Style table header */
+.table thead th {
+    background-color: #242424;
+    color: #ffffff;
+    border-bottom: 2px solid #333333;
+}
+
+/* Style table rows */
+.table tbody tr {
+    background-color: #1a1a1a;
+}
+
+.table tbody tr:hover {
+    background-color: #242424;
+}
+
+/* Style table borders */
+.table td, .table th {
+    border-color: #333333;
+}
+
+/* Style buttons */
+.btn-warning {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #242424;
+    border-color: #333333;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #333333;
+    border-color: #444444;
+}
+
+/* Add red accent for title */
+h2 {
+    color: #ff0000;
+}
+
+/* Responsive design */
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 0.5rem;
+    }
+    .table-responsive {
+        border: none;
+    }
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+    .table thead {
+        display: none;
+    }
+    .table tbody tr {
+        margin-bottom: 1rem;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        padding: 0.5rem;
+    }
+    .table td {
+        text-align: right;
+        padding: 0.5rem;
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    .table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 0.5rem;
+        font-weight: bold;
+        text-align: left;
+        color: #ff0000;
+    }
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+    .btn-sm {
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn {
+        width: 100%;
+    }
+    .table td {
+        padding-left: 40%;
+    }
+    .table td:before {
+        width: 40%;
+    }
+}
